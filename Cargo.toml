@@ -1,0 +1,27 @@
+[workspace]
+members = ["dtype", "dsource", "plan", "optim", "exec"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[workspace.dependencies]
+arrow = { version = "57", default-features = false }
+dbms-dtype = { path = "dtype" }
+dbms-dsource = { path = "dsource" }
+dbms-plan = { path = "plan" }
+dbms-optim = { path = "optim" }
+dbms-exec = { path = "exec" }
+
+[package]
+name = "dbms"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+dbms-dtype.workspace = true
+dbms-dsource.workspace = true
+dbms-plan.workspace = true
+dbms-optim.workspace = true
+dbms-exec.workspace = true

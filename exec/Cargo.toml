@@ -1,0 +1,10 @@
+[package]
+name = "dbms-exec"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+dbms-dtype.workspace = true
+dbms-dsource.workspace = true
+dbms-plan.workspace = true
+dbms-optim.workspace = true

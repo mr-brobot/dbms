@@ -1,0 +1,8 @@
+[package]
+name = "dbms-optim"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+dbms-dtype.workspace = true
+dbms-plan.workspace = true

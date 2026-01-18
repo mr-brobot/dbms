@@ -1,0 +1,7 @@
+[package]
+name = "dbms-dsource"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+dbms-dtype.workspace = true

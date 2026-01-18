@@ -1,0 +1,7 @@
+[package]
+name = "dbms-dtype"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+arrow.workspace = true

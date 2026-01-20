@@ -4,4 +4,6 @@ version.workspace = true
 edition.workspace = true
 
 [dependencies]
+arrow = { version = "57", default-features = false, features = ["csv", "prettyprint"] }
 dbms-dtype.workspace = true
+parquet = { version = "57", default-features = false, features = ["arrow", "snap"] }

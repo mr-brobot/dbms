@@ -2,10 +2,12 @@
 
 mod column;
 mod field;
+mod record;
 mod schema;
 
 pub use column::{Column, Scalar};
 pub use field::Field;
+pub use record::RecordBatch;
 pub use schema::Schema;
 
 use arrow::datatypes::DataType as ArrowDataType;

@@ -1,6 +1,6 @@
 //! Schema type for the DBMS query engine.
 
-use crate::Field;
+use crate::{DataType, Field};
 use arrow::datatypes::{Field as ArrowField, Schema as ArrowSchema};
 
 /// A schema consisting of a list of fields.
@@ -49,6 +49,22 @@ impl From<Schema> for ArrowSchema {
             .map(ArrowField::from)
             .collect::<Vec<_>>();
         ArrowSchema::new(fields)
+    }
+}
+
+impl TryFrom<&ArrowSchema> for Schema {
+    type Error = String;
+
+    fn try_from(s: &ArrowSchema) -> Result<Self, Self::Error> {
+        let fields: Result<Vec<Field>, String> = s
+            .fields()
+            .iter()
+            .map(|f| {
+                let dtype = DataType::try_from(f.data_type().clone())?;
+                Ok(Field::new(f.name(), dtype))
+            })
+            .collect();
+        Ok(Self::new(fields?))
     }
 }
 
